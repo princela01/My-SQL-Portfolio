@@ -1,0 +1,10 @@
+CREATE TABLE Pastries (id INTEGER PRIMARY KEY, product_name TEXT, price INTEGER, flavor_types INTEGER, in_store_weekly_amount_sold INTEGER, online_weekly_amount_sold INTEGER);
+INSERT INTO Pastries VALUES (1, "Donuts", $3, 6, 326, 350);
+INSERT INTO Pastries VALUES (2, "Cupcakes", $4, 5, 301, 247);
+INSERT INTO Pastries VALUES (3, "Eclairs", $2, 1, 255, 136);
+INSERT INTO Pastries VALUES (4, "Croissants", $2, 2, 150, 120);
+INSERT INTO Pastries VALUES (5, "Macaroons", $1, 5, 130, 300);
+INSERT INTO Pastries VALUES (6, "Tarts", $3, 1, 100, 175);
+INSERT INTO Pastries VALUES (7, "Cannolis", $2, 2, 135, 115);
+SELECT product_name, SUM (in_store_weekly_amount_sold) FROM pastries GROUP BY product_name;
+SELECT product_name, SUM (online_weekly_amount_sold) FROM pastries GROUP BY product_name;
